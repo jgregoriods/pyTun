@@ -6,56 +6,7 @@
     <body>
         <div class="container">
 
-            <form method="post" id="maya-form">
-                <div class="form-row">
-
-                    <div class="col">
-                        <input type="number" class="form-control" id="baktun" name="baktun" value="{{ maya_date.long_count[0] }}">
-                    </div>
-
-                    <div class="col">
-                        <input type="number" class="form-control" id="katun" name="katun" value="{{ maya_date.long_count[1] }}">
-                    </div>
-
-                    <div class="col">
-                        <input type="number" class="form-control" id="tun" name="tun" value="{{ maya_date.long_count[2] }}">
-                    </div>
-
-                    <div class="col">
-                        <input type="number" class="form-control" id="uinal" name="uinal" value="{{ maya_date.long_count[3] }}">
-                    </div>
-
-                    <div class="col">
-                        <input type="number" class="form-control" id="kin" name="kin" value="{{ maya_date.long_count[4] }}">
-                    </div>
-
-                    <div class="col">
-                        <button type="submit" name="maya-form" class="btn btn-primary">Convert</button>
-                    </div>
-                </div>
-            </form>
-
-            <form method="post" id="gregorian-form">
-                <div class="form-row">
-
-                    <div class="col">
-                        <input type="number" class="form-control" id="greg-day" name="greg-day" value="{{ maya_date.gregorian['day'] }}">
-                    </div>
-
-                    <div class="col">
-                        <input type="number" class="form-control" id="greg-month" name="greg-month" value="{{ maya_date.gregorian['month'] }}">
-                    </div>
-
-                    <div class="col">
-                        <input type="number" class="form-control" id="greg-year" name="greg-year" value="{{ gregorian_year }}">
-                    </div>
-
-                    <div class="col">
-                        <p>{{ era }}</p>
-                    </div>
-
-                </div>
-            </form>
+            {{ maya_form.baktun(class="form-control") }}
 
             {{ maya_date.gregorian }}
             {{ maya_date.julian }}
