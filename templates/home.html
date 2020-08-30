@@ -5,11 +5,63 @@
     </head>
     <body>
         <div class="container">
+            <form method="post" action="/convert">
+                <div class="card card-body">
+                    <div class="form-row">
 
-            {{ maya_form.baktun(class="form-control") }}
+                        <div class="col-md">
+                            {{ maya_form.baktun(class="form-control", type="number") }}
+                        </div>
 
-            {{ maya_date.gregorian }}
-            {{ maya_date.julian }}
+                        <div class="col-md">
+                            {{ maya_form.katun(class="form-control", type="number") }}
+                        </div>
+
+                        <div class="col-md">
+                            {{ maya_form.tun(class="form-control", type="number") }}
+                        </div>
+
+                        <div class="col-md">
+                            {{ maya_form.uinal(class="form-control", type="number") }}
+                        </div>
+
+                        <div class="col-md">
+                            {{ maya_form.kin(class="form-control", type="number") }}
+                        </div>
+
+                        <div class="col-md">
+                            {{ maya_form.submit_maya(class="btn btn-primary") }}
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="card card-body">
+                    <div class="form-row">
+
+                        <div cass="col-md">
+                            {{ maya_form.greg_day(class="form-control", type="number") }}
+                        </div>
+
+                        <div cass="col-md">
+                            {{ maya_form.greg_month(class="form-control", type="number") }}
+                        </div>
+
+                        <div cass="col-md">
+                            {{ maya_form.greg_year(class="form-control", type="number") }}
+                        </div>
+
+                        <div class="col-md">
+                            {{ maya_form.submit_greg(class="btn btn-primary") }}
+                        </div>
+
+                    </div>
+                </div>
+                
+            </form>
+                {{ maya_date.gregorian }}
+                {{ maya_date.julian }}
 
         </div>
     </body>
