@@ -1,0 +1,28 @@
+body {
+    background: url("../images/bgPalenque.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img-responsive {
+    max-height: 100px;
+    max-width: auto;
+}
+
+form .card {
+    color: white;
+    background-color: #c34d59;
+    text-transform: uppercase;
+    font-size: small; !important
+}
+
+form .btn-primary {
+    background-color: #e7cc75;
+    border: #e7cc75;
+
+}
+
+form .btn-primary:hover {
+    background-color: #ccaf53;
+    
+}

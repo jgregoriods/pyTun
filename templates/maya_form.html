@@ -1,0 +1,128 @@
+<form method="post">
+    <div class="card card-body">
+        <h5>Long count</h5>
+        <div class="form-row">
+            <div class="col-md">
+                <input type="number" class="form-control" id="baktun" name="baktun" value="{{ maya_date.long_count[0] }}">
+            </div>
+
+            <div class="col-md">
+                <input type="number" class="form-control" id="katun" name="katun" value="{{ maya_date.long_count[1] }}">
+            </div>
+
+            <div class="col-md">
+                <input type="number" class="form-control" id="tun" name="tun" value="{{ maya_date.long_count[2] }}">
+            </div>
+
+            <div class="col-md">
+                <input type="number" class="form-control" id="uinal" name="uinal" value="{{ maya_date.long_count[3] }}">
+            </div>
+
+            <div class="col-md">
+                <input type="number" class="form-control" id="kin" name="kin" value="{{ maya_date.long_count[4] }}">
+            </div>
+
+            <div class="col-md">
+                <input type="submit" class="btn btn-primary btn-block" id="submit-maya" name="submit-maya" value="Convert">
+            </div>
+        </div>
+
+        <div class="form-row mt-2">
+            <div class="col-md">
+                <h5>Calendar round</h5>
+            </div>
+
+            <div class="col-md-3">
+                <input type="text" class="form-control" value="{{ maya_date.tzolkin[0] }} {{ maya_date.tzolkin[1] }}" readonly>
+            </div>
+
+            <div class="col-md-3">
+                <input type="text" class="form-control" value="{{ maya_date.haab[0] }} {{ maya_date.haab[1] }}" readonly>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="card card-body mt-2">
+        <div class="form-row">
+            <div class="col-md">
+                <h5>Correlation constant</h5>
+            </div>
+            <div class="col-md-4">
+                <input type="number" class="form-control" id="constant" name="constant" value="{{ maya_date.constant }}">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="card card-body mt-2">
+        <h5>Gregorian calendar</h5>
+        <div class="form-row">
+            <div class="col-md">
+                <input type="number" class="form-control" id="greg-day" name="greg-day" value="{{ maya_date.gregorian['day'] }}">
+            </div>
+
+            <div class="col-md">
+                <select class="form-control" id="greg-month" name="greg-month">
+                    {% for month in months %}
+                    <option value="{{ months[month] }}" {% if maya_date.gregorian['month'] == months[month] %} selected {% endif %}>{{ month }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="col-md">
+                <input type="number" class="form-control" id="greg-year" name="greg-year" value="{{ maya_date.gregorian['year'] | abs }}">
+            </div>
+
+            <div class="col-md">
+                <select class="form-control" id="greg-era" name="greg-era">
+                    <option value="-" {% if maya_date.gregorian['year'] < 0 %} selected {% endif %}>BCE</option>
+                    <option value="" {% if maya_date.gregorian['year'] > 0 %} selected {% endif %}>CE</option>
+                </select>
+            </div>
+
+            <div class="col-md">
+                <input type="submit" class="btn btn-primary btn-block" id="submit-greg" name="submit-greg" value="Convert">
+            </div>
+
+        </div>
+    </div>
+    
+
+    <div class="card card-body mt-2">
+        <h5>Julian calendar</h5>
+        <div class="form-row">
+            <div class="col-md">
+                <input type="number" class="form-control" id="jul-day" name="jul-day" value="{{ maya_date.julian['day'] }}">
+            </div>
+
+            <div class="col-md">
+                <select class="form-control" id="jul-month" name="jul-month">
+                    {% for month in months %}
+                    <option value="{{ months[month] }}" {% if maya_date.julian['month'] == months[month] %} selected {% endif %}>{{ month }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="col-md">
+                <input type="number" class="form-control" id="jul-year" name="jul-year" value="{{ maya_date.julian['year'] | abs }}">
+            </div>
+
+            <div class="col-md">
+                <select class="form-control" id="jul-era" name="jul-era">
+                    <option value="-" {% if maya_date.julian['year'] < 0 %} selected {% endif %}>BCE</option>
+                    <option value="" {% if maya_date.julian['year'] > 0 %} selected {% endif %}>CE</option>
+                </select>
+            </div>
+
+            <div class="col-md">
+                <input type="submit" class="btn btn-primary btn-block" id="submit-jul" name="submit-jul" value="Convert">
+            </div>
+
+        </div>
+    </div>
+
+</form>
