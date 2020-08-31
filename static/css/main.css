@@ -1,28 +1,51 @@
 body {
-    background: url("../images/bgPalenque.JPG");
+    background: url("../images/Chichen_Itza_3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .img-responsive {
-    max-height: 100px;
+    max-height: 120px;
     max-width: auto;
 }
 
-form .card {
-    color: white;
-    background-color: #c34d59;
+body {
+    font-size: 16px !important;
+}
+
+form {
+    color: #2a363b;
     text-transform: uppercase;
-    font-size: small; !important
 }
 
 form .btn-primary {
-    background-color: #e7cc75;
-    border: #e7cc75;
+    background-color: #e84a5f;
+    border: #e84a5f;
+    text-transform: uppercase;
 
 }
 
-form .btn-primary:hover {
-    background-color: #ccaf53;
-    
+form .btn-primary:hover,
+form .btn-primary:focus,
+form .btn-primary:active {
+    background-color: #e2374d !important;
+}
+
+form .form-control[readonly] {
+    background-color: white;
+}
+
+form .form-control:focus {
+    border-color: #e2374d;
+    -moz-box-shadow: 0 0 4px #e84a5f !important;
+    box-shadow: 0 0 4px #e84a5f !important;
+}
+
+.bg-dark {
+    background-color: #2a363b !important;
+}
+
+.card {
+    -moz-box-shadow: 0 0 12px #2a363b !important;
+    box-shadow: 0 0 12px #2a363b !important;
 }

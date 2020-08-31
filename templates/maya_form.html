@@ -1,25 +1,25 @@
 <form method="post">
     <div class="card card-body">
-        <h5>Long count</h5>
+        Long count
         <div class="form-row">
             <div class="col-md">
-                <input type="number" class="form-control" id="baktun" name="baktun" value="{{ maya_date.long_count[0] }}">
+                <input type="number" class="form-control" id="baktun" name="baktun" min="0" max="19" value="{{ maya_date.long_count[0] }}">
             </div>
 
             <div class="col-md">
-                <input type="number" class="form-control" id="katun" name="katun" value="{{ maya_date.long_count[1] }}">
+                <input type="number" class="form-control" id="katun" name="katun" min="0" max="19" value="{{ maya_date.long_count[1] }}">
             </div>
 
             <div class="col-md">
-                <input type="number" class="form-control" id="tun" name="tun" value="{{ maya_date.long_count[2] }}">
+                <input type="number" class="form-control" id="tun" name="tun" min="0" max="19" value="{{ maya_date.long_count[2] }}">
             </div>
 
             <div class="col-md">
-                <input type="number" class="form-control" id="uinal" name="uinal" value="{{ maya_date.long_count[3] }}">
+                <input type="number" class="form-control" id="uinal" name="uinal" min="0" max="17" value="{{ maya_date.long_count[3] }}">
             </div>
 
             <div class="col-md">
-                <input type="number" class="form-control" id="kin" name="kin" value="{{ maya_date.long_count[4] }}">
+                <input type="number" class="form-control" id="kin" name="kin" min="0" max="19" value="{{ maya_date.long_count[4] }}">
             </div>
 
             <div class="col-md">
@@ -27,16 +27,16 @@
             </div>
         </div>
 
-        <div class="form-row mt-2">
+        <div class="form-row mt-4">
             <div class="col-md">
-                <h5>Calendar round</h5>
+                Calendar round
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md">
                 <input type="text" class="form-control" value="{{ maya_date.tzolkin[0] }} {{ maya_date.tzolkin[1] }}" readonly>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md">
                 <input type="text" class="form-control" value="{{ maya_date.haab[0] }} {{ maya_date.haab[1] }}" readonly>
             </div>
         </div>
@@ -45,12 +45,12 @@
 
 
 
-    <div class="card card-body mt-2">
+    <div class="card card-body mt-4">
         <div class="form-row">
             <div class="col-md">
-                <h5>Correlation constant</h5>
+                Correlation constant
             </div>
-            <div class="col-md-4">
+            <div class="col-md">
                 <input type="number" class="form-control" id="constant" name="constant" value="{{ maya_date.constant }}">
             </div>
         </div>
@@ -58,11 +58,11 @@
 
 
 
-    <div class="card card-body mt-2">
-        <h5>Gregorian calendar</h5>
+    <div class="card card-body mt-4">
+        Gregorian calendar
         <div class="form-row">
             <div class="col-md">
-                <input type="number" class="form-control" id="greg-day" name="greg-day" value="{{ maya_date.gregorian['day'] }}">
+                <input type="number" class="form-control" id="greg-day" name="greg-day" min="1" max="31" value="{{ maya_date.gregorian['day'] }}">
             </div>
 
             <div class="col-md">
@@ -74,7 +74,7 @@
             </div>
 
             <div class="col-md">
-                <input type="number" class="form-control" id="greg-year" name="greg-year" value="{{ maya_date.gregorian['year'] | abs }}">
+                <input type="number" class="form-control" id="greg-year" name="greg-year" min="1" value="{{ maya_date.gregorian['year'] | abs }}">
             </div>
 
             <div class="col-md">
@@ -92,11 +92,11 @@
     </div>
     
 
-    <div class="card card-body mt-2">
-        <h5>Julian calendar</h5>
+    <div class="card card-body mt-4">
+        Julian calendar
         <div class="form-row">
             <div class="col-md">
-                <input type="number" class="form-control" id="jul-day" name="jul-day" value="{{ maya_date.julian['day'] }}">
+                <input type="number" class="form-control" id="jul-day" name="jul-day" min="1" max="31" value="{{ maya_date.julian['day'] }}">
             </div>
 
             <div class="col-md">
@@ -108,7 +108,7 @@
             </div>
 
             <div class="col-md">
-                <input type="number" class="form-control" id="jul-year" name="jul-year" value="{{ maya_date.julian['year'] | abs }}">
+                <input type="number" class="form-control" id="jul-year" name="jul-year" min="1" value="{{ maya_date.julian['year'] | abs }}">
             </div>
 
             <div class="col-md">

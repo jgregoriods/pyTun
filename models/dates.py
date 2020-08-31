@@ -37,6 +37,7 @@ class MayaDate:
 
         self.tzolkin = self.get_tzolkin()
         self.haab = self.get_haab()
+        self.lord_of_night = self.get_lord_of_night()
 
     def get_gregorian(self):
         jd = Time(self.julian_day, format='jd')
@@ -79,6 +80,14 @@ class MayaDate:
             coef = year_day % 20
             name = haab_names[floor(year_day / 20)]
         return [coef, name]
+
+    def get_lord_of_night(self):
+        index = MayaDate.to_decimal(self.long_count) % 9
+        if index == 0:
+            return 'G9'
+        else:
+            return f'G{index}'
+
 
     def __str__(self):
         long_count = '.'.join(map(str, self.long_count))

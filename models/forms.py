@@ -8,11 +8,3 @@ class MayaForm(FlaskForm):
     tun = IntegerField('tun')
     uinal = IntegerField('uinal')
     kin = IntegerField('kin')
-
-    submit_maya = SubmitField('Convert')
-
-    greg_day = IntegerField('greg_day')
-    greg_month = IntegerField('greg_month')
-    greg_year = IntegerField('greg_year')
-
-    submit_greg = SubmitField('Convert')
