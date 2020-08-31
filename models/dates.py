@@ -14,12 +14,12 @@ haab_names = ['Pop', 'Uo', 'Zip', 'Zotz', 'Tzec', 'Xul', 'Yaxkin', 'Mol',
 
 
 class MayaDate:
-    def __init__(self, date=[0, 0, 0, 0, 0], format='long_count', coefficient=584283):
-        self.coefficient = coefficient
+    def __init__(self, date=[0, 0, 0, 0, 0], format='long_count', constant=584283):
+        self.constant = constant
 
         if format == 'long_count':
             self.long_count = date
-            self.julian_day = MayaDate.to_decimal(date) + coefficient
+            self.julian_day = MayaDate.to_decimal(date) + constant
             self.gregorian = self.get_gregorian()
             self.julian = self.get_julian()
         
@@ -49,7 +49,7 @@ class MayaDate:
             }
 
     def get_long_count(self):
-        return MayaDate.to_vigesimal(self.julian_day - self.coefficient)
+        return MayaDate.to_vigesimal(self.julian_day - self.constant)
 
     def get_julian(self):
         jd = Time(self.julian_day - MayaDate.julian_offset(self.gregorian), format='jd')
@@ -120,4 +120,4 @@ class MayaDate:
         n_days = Time(date).jd - Time({'year': 200, 'month': 2, 'day': 1}).jd
         centuries = n_days // 36524
         extra_leap = (centuries + 2) // 4
-        return centuries - extra_leap
+        return int(centuries - extra_leap)
