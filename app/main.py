@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, make_response, redirect
 
-from models.dates import MayaDate
-from models.forms import MayaForm
 from datetime import datetime
+from .models.dates import MayaDate
+from .models.forms import MayaForm
 
 
 MONTHS = {
@@ -51,6 +51,3 @@ def home_template():
                                   constant=int(request.form['constant']))
 
     return render_template('home.html', maya_date=maya_date, months=MONTHS)
-
-if __name__ == '__main__':
-    app.run(debug=True)
