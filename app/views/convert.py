@@ -2,7 +2,6 @@ from flask import Blueprint, render_template, request
 
 from datetime import datetime
 from ..models.maya_date import MayaDate
-from ..utils import MONTHS
 
 
 convert_blueprint = Blueprint('convert', __name__)
@@ -48,4 +47,4 @@ def convert_template():
                                   format='julian',
                                   constant=int(request.form['constant']))
 
-    return render_template('home.html', maya_date=maya_date, months=MONTHS)
+    return render_template('home.html', maya_date=maya_date, months=MayaDate.MONTHS)
