@@ -1,5 +1,5 @@
 body {
-    background: url("../images/Chichen_Itza_3.jpg");
+    background: url("../images/FreeVector-Mayan-Pyramid-Vector.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -29,6 +29,8 @@ form .btn-primary:hover,
 form .btn-primary:focus,
 form .btn-primary:active {
     background-color: #e2374d !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 form .form-control[readonly] {
@@ -36,6 +38,7 @@ form .form-control[readonly] {
 }
 
 form .form-control:focus {
+    outline: none;
     border-color: #e2374d;
     -moz-box-shadow: 0 0 4px #e84a5f !important;
     box-shadow: 0 0 4px #e84a5f !important;
