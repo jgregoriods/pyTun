@@ -74,7 +74,7 @@
             </div>
 
             <div class="col-md">
-                <input type="number" class="form-control" id="greg-year" name="greg-year" min="1" value="{{ maya_date.gregorian['year'] | abs }}">
+                <input type="number" class="form-control" id="greg-year" name="greg-year" min="1" {% if maya_date.gregorian['year'] <= 0 %} value="{{ (maya_date.gregorian['year'] - 1) | abs }}" {% else %} value="{{ maya_date.gregorian['year'] }}" {% endif %}>
             </div>
 
             <div class="col-md">
@@ -108,7 +108,7 @@
             </div>
 
             <div class="col-md">
-                <input type="number" class="form-control" id="jul-year" name="jul-year" min="1" value="{{ maya_date.julian['year'] | abs }}">
+                <input type="number" class="form-control" id="jul-year" name="jul-year" min="1" {% if maya_date.julian['year'] <= 0 %} value="{{ (maya_date.julian['year'] - 1) | abs }}" {% else %} value="{{ maya_date.julian['year'] }}" {% endif %}>
             </div>
 
             <div class="col-md">

@@ -1,13 +1,10 @@
-import datetime
-
 from astropy.time import Time
 from math import floor, ceil
 from ..utils import TZOLKIN_NAMES, HAAB_NAMES
 
 
 class MayaDate:
-    def __init__(self, date=[0, 0, 0, 0, 0], format='long_count',
-                 constant=584283):
+    def __init__(self, date, format='long_count', constant=584283):
         self.constant = constant
 
         if format == 'long_count':
@@ -88,7 +85,6 @@ class MayaDate:
 
         else:
             return f'G{index}'
-
 
     def __str__(self):
         long_count = '.'.join(map(str, self.long_count))

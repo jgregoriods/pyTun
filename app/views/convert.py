@@ -1,5 +1,4 @@
-from flask import Flask, Blueprint, render_template, request, make_response, \
-                  redirect
+from flask import Blueprint, render_template, request
 
 from datetime import datetime
 from ..models.maya_date import MayaDate
@@ -29,6 +28,9 @@ def convert_template():
 
         elif 'submit-greg' in request.form:
             year = int(request.form['greg-era'] + request.form['greg-year'])
+            if year < 0:
+                year += 1
+
             maya_date = MayaDate({'day': int(request.form['greg-day']),
                                   'month': int(request.form['greg-month']),
                                   'year': year},
@@ -37,6 +39,9 @@ def convert_template():
 
         elif 'submit-jul' in request.form:
             year = int(request.form['jul-era'] + request.form['jul-year'])
+            if year < 0:
+                year += 1
+            
             maya_date = MayaDate({'day': int(request.form['jul-day']),
                                   'month': int(request.form['jul-month']),
                                   'year': year},

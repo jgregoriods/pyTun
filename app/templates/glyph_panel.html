@@ -91,7 +91,7 @@
         <div class="col">
             <div class="row">
                 <div class="col mr-0 pr-0">
-                    <img src="static/images/number-{{ maya_date.haab[0] }}.png" class="img-responsive float-right">
+                    <img {% if maya_date.haab[0] == 0 %} src="static/images/chum.png" {% else %} src="static/images/number-{{ maya_date.haab[0] }}.png" {% endif %} class="img-responsive float-right">
                 </div>
                 <div class="col ml-0 pl-0">
                     <img src="static/images/{{ maya_date.haab[1] }}.png" class="img-responsive float-left">
