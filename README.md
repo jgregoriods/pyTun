@@ -3,6 +3,8 @@
 
 This is a Python app for converting between the Maya and Western (Gregorian and Julian) calendars.
 
+<img src="app/static/images/app_screen.png">
+
 <h2>Instructions</h2>
 
 The Classic Maya kept track of historical events using three main calendars. The <b>Long Count</b> represented the number of days ellapsed since the creation of the present Cosmos, which the Maya reckoned to have happened about five thousand years ago. This date was expressed in the vigesimal system, with units of 1, 20, 360, 7,200 and 144,000 days.
