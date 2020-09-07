@@ -141,6 +141,20 @@ class MayaDate:
 
         return f'{long_count} {tzolkin} {haab}'
 
+    def __add__(self, distance_number):
+        if isinstance(distance_number, list):
+            n_days = (MayaDate.to_decimal(self.long_count)
+                      + MayaDate.to_decimal(distance_number))
+            return MayaDate(MayaDate.to_vigesimal(n_days),
+                            constant=self.constant)
+
+    def __sub__(self, distance_number):
+        if isinstance(distance_number, list):
+            n_days = (MayaDate.to_decimal(self.long_count)
+                      - MayaDate.to_decimal(distance_number))
+            return MayaDate(MayaDate.to_vigesimal(n_days),
+                            constant=self.constant)
+
     @staticmethod
     def to_vigesimal(decimal: int) -> List:
         """Converts a decimal number to the Maya vigesimal system."""
