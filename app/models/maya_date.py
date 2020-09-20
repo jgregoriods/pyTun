@@ -10,8 +10,8 @@ class MayaDate:
     """
 
     TZOLKIN_NAMES = ['Ahau', 'Imix', 'Ik', 'Akbal', 'Kan', 'Chicchan', 'Cimi',
-                     'Manik', 'Lamat', 'Muluc', 'Oc', 'Chuen', 'Eb', 'Ben', 'Ix',
-                     'Men', 'Cib', 'Caban', 'Etznab', 'Cauac']
+                     'Manik', 'Lamat', 'Muluc', 'Oc', 'Chuen', 'Eb', 'Ben',
+                     'Ix', 'Men', 'Cib', 'Caban', 'Etznab', 'Cauac']
 
     HAAB_NAMES = ['Pop', 'Uo', 'Zip', 'Zotz', 'Tzec', 'Xul', 'Yaxkin', 'Mol',
                   'Chen', 'Yax', 'Zac', 'Ceh', 'Mac', 'Kankin', 'Muan', 'Pax',
@@ -34,10 +34,11 @@ class MayaDate:
 
         if format == 'long_count':
             self.long_count = date or [0, 0, 0, 0, 0]
-            self.julian_day = MayaDate.to_decimal(self.long_count) + self.constant
+            self.julian_day = (MayaDate.to_decimal(self.long_count)
+                               + self.constant)
             self.gregorian = self.get_gregorian()
             self.julian = self.get_julian()
-        
+
         elif format == 'gregorian':
             self.gregorian = date or {'year': -3113, 'month': 8, 'day': 11}
             self.julian_day = ceil(Time(self.gregorian).jd)

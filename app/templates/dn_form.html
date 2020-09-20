@@ -1,0 +1,59 @@
+<form method="post">
+    <div class="card card-body">
+        Long Count
+        <div class="form-row">
+            <div class="col-md">
+                <input type="number" class="form-control" id="baktun" name="baktun" min="0" max="19" value="{{ next_date.long_count[0] }}">
+            </div>
+
+            <div class="col-md">
+                <input type="number" class="form-control" id="katun" name="katun" min="0" max="19" value="{{ next_date.long_count[1] }}">
+            </div>
+
+            <div class="col-md">
+                <input type="number" class="form-control" id="tun" name="tun" min="0" max="19" value="{{ next_date.long_count[2] }}">
+            </div>
+
+            <div class="col-md">
+                <input type="number" class="form-control" id="uinal" name="uinal" min="0" max="17" value="{{ next_date.long_count[3] }}">
+            </div>
+
+            <div class="col-md">
+                <input type="number" class="form-control" id="kin" name="kin" min="0" max="19" value="{{ next_date.long_count[4] }}">
+            </div>
+        </div>
+
+        <br>
+
+        Distance Number
+        <div class="form-row">
+            <div class="col-md">
+                <select class="form-control" id="operator" name="operator">
+                    <option value="PDI">+</option>
+                    <option value="ADI">-</option>
+                <select>
+            </div>
+
+            <div class="col-md">
+                <input type="number" class="form-control" id="dn-katun" name="dn-katun" min="0" max="19" value=0>
+            </div>
+
+            <div class="col-md">
+                <input type="number" class="form-control" id="dn-tun" name="dn-tun" min="0" max="19" value=0>
+            </div>
+
+            <div class="col-md">
+                <input type="number" class="form-control" id="dn-uinal" name="dn-uinal" min="0" max="17" value=0>
+            </div>
+
+            <div class="col-md">
+                <input type="number" class="form-control" id="dn-kin" name="dn-kin" min="0" max="19" value=0>
+            </div>
+
+            <div class="col-md">
+                <input type="submit" class="btn btn-primary btn-block" id="calculate-dn" name="calculate-dn" value="Calculate">
+            </div>
+
+        </div>
+    </div>
+</form>

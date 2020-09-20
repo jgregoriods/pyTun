@@ -1,0 +1,99 @@
+<div class="row mt-2">
+    <div class="col">
+        <div class="row">
+            <div class="col mr-0 pr-0">
+                <img src="static/images/number-{{ maya_date.tzolkin[0] }}.png" class="img-responsive float-right">
+            </div>
+
+            <div class="col ml-0 pl-0">
+                <img src="static/images/{{ maya_date.tzolkin[1] }}.png" class="img-responsive float-left">
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="row">
+            <div class="col mr-0 pr-0">
+                <img {% if maya_date.haab[0] == 0 %} src="static/images/chum.png" {% else %} src="static/images/number-{{ maya_date.haab[0] }}.png" {% endif %} class="img-responsive float-right">
+            </div>
+
+            <div class="col ml-0 pl-0">
+                <img src="static/images/{{ maya_date.haab[1] }}.png" class="img-responsive float-left">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-2">
+    <div class="col">
+        <div class="row">
+            <div class="col mr-0 pr-0">
+                <img src="static/images/number-{{ dn[4] }}.png" class="img-responsive float-right">
+            </div>
+
+            <div class="col ml-0 pl-0">
+                <img src="static/images/uinal-{{ dn[3] }}.png" class="img-responsive float-left">
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="row">
+            <div class="col mr-0 pr-0">
+                <img src="static/images/number-{{ dn[2] }}.png" class="img-responsive float-right">
+            </div>
+
+            <div class="col ml-0 pl-0">
+                <img src="static/images/TUN.png" class="img-responsive float-left">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-2">
+    <div class="col">
+        <div class="row">
+            <div class="col mr-0 pr-0">
+                <img src="static/images/number-{{ dn[1] }}.png" class="img-responsive float-right">
+            </div>
+
+            <div class="col ml-0 pl-0">
+                <img src="static/images/KATUN.png" class="img-responsive float-left">
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <img src="static/images/{{ operator }}.png" class="img-responsive float-right">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-2">
+    <div class="col">
+        <div class="row">
+            <div class="col mr-0 pr-0">
+                <img src="static/images/number-{{ next_date.tzolkin[0] }}.png" class="img-responsive float-right">
+            </div>
+
+            <div class="col ml-0 pl-0">
+                <img src="static/images/{{ next_date.tzolkin[1] }}.png" class="img-responsive float-left">
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="row">
+            <div class="col mr-0 pr-0">
+                <img {% if next_date.haab[0] == 0 %} src="static/images/chum.png" {% else %} src="static/images/number-{{ next_date.haab[0] }}.png" {% endif %} class="img-responsive float-right">
+            </div>
+
+            <div class="col ml-0 pl-0">
+                <img src="static/images/{{ next_date.haab[1] }}.png" class="img-responsive float-left">
+            </div>
+        </div>
+    </div>
+</div>

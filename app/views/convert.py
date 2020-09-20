@@ -14,7 +14,7 @@ def convert_template():
         maya_date = MayaDate({'day': today.day,
                               'month': today.month,
                               'year': today.year},
-                              format='gregorian')
+                             format='gregorian')
 
     elif request.method == 'POST':
         if 'submit-maya' in request.form:
@@ -33,18 +33,19 @@ def convert_template():
             maya_date = MayaDate({'day': int(request.form['greg-day']),
                                   'month': int(request.form['greg-month']),
                                   'year': year},
-                                  format='gregorian',
-                                  constant=int(request.form['constant']))
+                                 format='gregorian',
+                                 constant=int(request.form['constant']))
 
         elif 'submit-jul' in request.form:
             year = int(request.form['jul-era'] + request.form['jul-year'])
             if year < 0:
                 year += 1
-            
+
             maya_date = MayaDate({'day': int(request.form['jul-day']),
                                   'month': int(request.form['jul-month']),
                                   'year': year},
-                                  format='julian',
-                                  constant=int(request.form['constant']))
+                                 format='julian',
+                                 constant=int(request.form['constant']))
 
-    return render_template('home.html', maya_date=maya_date, months=MayaDate.MONTHS)
+    return render_template('home.html', maya_date=maya_date,
+                           months=MayaDate.MONTHS)
